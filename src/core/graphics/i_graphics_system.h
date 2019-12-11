@@ -2,6 +2,7 @@
 #define I_GRAPHICS_SYSTEM_H
 
 #include "i_window.h"
+#include "core/event/event_handler.h"
 
 namespace Workshop
 {
@@ -21,9 +22,9 @@ namespace Workshop
 
 		virtual void EndGraphicsSystem() = 0;
 
-		inline void HandleEvent()
+		inline void HandleEvent(EventHandler* handler_)
 		{
-			window->HandleEvent();
+			window->HandleEvent(handler_);
 		}
 
 		inline void SetupWindow(const WindowInfo& window_info_)

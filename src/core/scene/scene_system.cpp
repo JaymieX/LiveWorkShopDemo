@@ -18,6 +18,11 @@ void Workshop::SceneSystem::SwitchScene(const std::string & name_)
 	current_scene->Begin();
 }
 
+void Workshop::SceneSystem::PreEventHandling()
+{
+	handel.Reset();
+}
+
 void Workshop::SceneSystem::Update()
 {
 	if (current_scene != nullptr)

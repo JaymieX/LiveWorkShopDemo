@@ -4,6 +4,8 @@
 #include <SDL.h>
 #include <glad/glad.h>
 
+#include "core/scene/scene_system.h"
+
 float vertices[] = {
 	 0.5f,  0.5f, 0.0f,  // top right
 	 0.5f, -0.5f, 0.0f,  // bottom right
@@ -38,6 +40,14 @@ const char* fragment_shader_source = "#version 450 core\n"
 Workshop::Scene0::Scene0(SceneSystem * system_) :
 	Scene(system_)
 {
+}
+
+void Workshop::Scene0::Update()
+{
+	if (system->GetEventHandler()->GetKeyboardDown() == KEY_J)
+	{
+		printf("J pressed\n");
+	}
 }
 
 void Workshop::Scene0::Begin()

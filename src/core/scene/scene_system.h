@@ -2,6 +2,7 @@
 #define SCENE_SYSTEM_H
 
 #include "scene.h"
+#include "core/event/event_handler.h"
 
 namespace Workshop
 {
@@ -11,8 +12,16 @@ namespace Workshop
 		std::unordered_map<std::string, std::unique_ptr<Scene>> scene_map;
 
 		Scene* current_scene;
-
+		
+	protected:
+		EventHandler handel;
+		
 	public:
+		inline EventHandler* GetEventHandler()
+		{
+			return &handel;
+		}
+		
 		template <typename SceneType, typename ...Args>
 		void AddScene(const std::string& name_, Args&&... args_)
 		{
@@ -33,6 +42,8 @@ namespace Workshop
 		}
 
 		void SwitchScene(const std::string& name_);
+
+		void PreEventHandling();
 
 		void Update();
 

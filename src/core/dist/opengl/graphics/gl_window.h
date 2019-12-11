@@ -18,7 +18,7 @@ namespace Workshop
 		// Inherited via IWindow
 		virtual void CreateWindow(const WindowInfo & window_info_) override;
 		virtual void SetWindowAsContext() override;
-		virtual void HandleEvent() override;
+		virtual void HandleEvent(EventHandler* handler_) override;
 
 		// Inherited via IWindow
 		virtual void SwapWindow() override;

@@ -31,7 +31,9 @@ void Workshop::Engine::Update()
 {
 	while (true)
 	{
-		graphics_system->HandleEvent();
+		scene_system.PreEventHandling();
+		
+		graphics_system->HandleEvent(scene_system.GetEventHandler());
 
 		scene_system.Update();
 

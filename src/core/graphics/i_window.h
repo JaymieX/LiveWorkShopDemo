@@ -1,6 +1,8 @@
 #ifndef I_WINDOW_H
 #define I_WINDOW_H
 
+#include "core/event/event_handler.h"
+
 namespace Workshop
 {
 	struct WindowInfo
@@ -18,7 +20,7 @@ namespace Workshop
 
 		virtual void SetWindowAsContext() = 0;
 
-		virtual void HandleEvent() = 0;
+		virtual void HandleEvent(EventHandler* handler_) = 0;
 
 		virtual void SwapWindow() = 0;
 	};

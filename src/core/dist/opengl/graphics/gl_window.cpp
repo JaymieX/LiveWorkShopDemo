@@ -1,6 +1,8 @@
 #include "workshop_pch.h"
 #include "gl_window.h"
 
+#include "core/dist/opengl/event/sdl_key_map.h"
+
 Workshop::GL_Window::~GL_Window()
 {
 	SDL_DestroyWindow(window);
@@ -25,10 +27,27 @@ void Workshop::GL_Window::SetWindowAsContext()
 	SDL_GL_MakeCurrent(window, context);
 }
 
-void Workshop::GL_Window::HandleEvent()
+void Workshop::GL_Window::HandleEvent(EventHandler* handler_)
 {
 	SDL_Event sdl_event;
 	SDL_PollEvent(&sdl_event);
+
+	/*if (sdl_event.type == SDL_KEYDOWN)
+	{
+		printf("key input\n");
+	}*/
+
+	SDL_KeyMap* translator = SDL_KeyMap::GetInstance();
+	
+	switch (sdl_event.type)
+	{
+	case SDL_KEYDOWN:
+		handler_->current_keyboard_key_down = translator->GetKeyboardTranslator().at(sdl_event.key.keysym.sym);
+		break;
+	case SDL_KEYUP:
+		handler_->current_keyboard_key_up = translator->GetKeyboardTranslator().at(sdl_event.key.keysym.sym);
+		break;
+	}
 }
 
 void Workshop::GL_Window::SwapWindow()

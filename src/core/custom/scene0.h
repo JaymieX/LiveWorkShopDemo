@@ -10,6 +10,8 @@ namespace Workshop
 	public:
 		Scene0(SceneSystem* system_);
 
+		void Update() override;
+
 		virtual void Begin() override;
 
 		virtual void Render() override;
