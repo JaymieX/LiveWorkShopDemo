@@ -3,6 +3,7 @@
 
 #include <SDL.h>
 #include <glad/glad.h>
+#include "gl_window.h"
 
 void Workshop::GL_GraphicsSystem::InitGraphicsSystem()
 {
@@ -35,6 +36,8 @@ void Workshop::GL_GraphicsSystem::InitGraphicsSystem()
 		printf("SDL OpenGL init error\n");
 		return;
 	}
+
+	window = std::make_unique<GL_Window>();
 }
 
 void Workshop::GL_GraphicsSystem::PostInit()
