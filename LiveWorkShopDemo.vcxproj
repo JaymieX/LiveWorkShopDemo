@@ -133,9 +133,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\custom\scene0.cpp" />
+    <ClCompile Include="src\core\dist\opengl\graphics\gl_graphics_system.cpp" />
+    <ClCompile Include="src\core\dist\opengl\graphics\gl_window.cpp" />
     <ClCompile Include="src\core\engine.cpp" />
     <ClCompile Include="src\core\graphics\i_graphics_system.cpp" />
     <ClCompile Include="src\core\graphics\i_window.cpp" />
+    <ClCompile Include="src\core\scene\scene.cpp" />
+    <ClCompile Include="src\core\scene\scene_system.cpp" />
     <ClCompile Include="src\glad.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -147,9 +152,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\custom\scene0.h" />
+    <ClInclude Include="src\core\dist\opengl\graphics\gl_graphics_system.h" />
+    <ClInclude Include="src\core\dist\opengl\graphics\gl_window.h" />
     <ClInclude Include="src\core\engine.h" />
     <ClInclude Include="src\core\graphics\i_graphics_system.h" />
     <ClInclude Include="src\core\graphics\i_window.h" />
+    <ClInclude Include="src\core\scene\scene.h" />
+    <ClInclude Include="src\core\scene\scene_system.h" />
     <ClInclude Include="src\workshop_pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

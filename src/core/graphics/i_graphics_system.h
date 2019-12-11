@@ -7,7 +7,7 @@ namespace Workshop
 {
 	class IGraphicsSystem
 	{
-	private:
+	protected:
 		std::unique_ptr<IWindow> window;
 
 	public:

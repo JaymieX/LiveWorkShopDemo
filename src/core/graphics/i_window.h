@@ -19,6 +19,8 @@ namespace Workshop
 		virtual void SetWindowAsContext() = 0;
 
 		virtual void HandleEvent() = 0;
+
+		virtual void SwapWindow() = 0;
 	};
 }
 

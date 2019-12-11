@@ -3,6 +3,7 @@
 
 #include "graphics/i_window.h"
 #include "graphics/i_graphics_system.h"
+#include "core/scene/scene_system.h"
 
 namespace Workshop
 {
@@ -18,6 +19,8 @@ namespace Workshop
 		static std::unique_ptr<IGraphicsSystem> graphics_system;
 
 	public:
+		static SceneSystem scene_system;
+
 		static void Init(Dist dist_, const WindowInfo& window_info_);
 
 		static void Update();

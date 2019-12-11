@@ -55,7 +55,7 @@ void Workshop::GL_GraphicsSystem::BeginRender()
 
 void Workshop::GL_GraphicsSystem::EndRender()
 {
-	// SDL_GL_SwapWindow(window);
+	window->SwapWindow();
 }
 
 void Workshop::GL_GraphicsSystem::EndGraphicsSystem()
